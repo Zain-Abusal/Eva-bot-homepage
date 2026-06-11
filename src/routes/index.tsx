@@ -103,12 +103,10 @@ function Hero() {
 function BotCard() {
   return (
     <div className="relative h-[420px] sm:h-[500px]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_50%,oklch(0.82_0.12_85/0.25),transparent_60%)]" />
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[110%] max-w-[560px] rotate-[-8deg] glass rounded-3xl p-5 shadow-card">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_50%,oklch(0.65_0.28_300/0.35),transparent_60%)]" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[110%] max-w-[560px] rotate-[-6deg] glass rounded-3xl p-5 shadow-card">
         <div className="flex items-center gap-3 mb-4">
-          <div className="h-12 w-12 rounded-full bg-gradient-gold grid place-items-center text-primary-foreground font-display text-xl">
-            {config.brand.logoEmoji}
-          </div>
+          <img src={logoAsset.url} alt="EVa" className="h-12 w-12 rounded-full ring-2 ring-primary/60" />
           <div>
             <div className="font-display text-2xl tracking-wide">PLAYING NOW</div>
             <div className="text-xs text-muted-foreground italic">Imagine Dragons x J.I.D — Enemy</div>
