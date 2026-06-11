@@ -42,9 +42,8 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border/40 backdrop-blur-xl bg-background/70">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         <a href="#home" className="flex items-center gap-2 shrink-0">
-          <div className="h-9 w-9 rounded-full bg-gradient-gold grid place-items-center text-primary-foreground font-display text-lg shadow-gold">
-            {config.brand.logoEmoji}
-          </div>
+          <img src={logoAsset.url} alt={`${config.brand.name} logo`} className="h-10 w-10 rounded-full ring-2 ring-primary/60 shadow-gold" />
+
           <div className="leading-none">
             <div className="font-display text-xl tracking-wider">{config.brand.name}</div>
             <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">{config.brand.tagline}</div>
