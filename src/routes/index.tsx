@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import config from "@/config.json";
+import logoAsset from "@/assets/eva-logo.png.asset.json";
 import {
   Music, Shield, Coins, TrendingUp, Ticket, Gift, Bot, Settings2,
   Gem, Globe, Check, ArrowRight, Sparkles, Play, SkipForward, SkipBack, Volume2,
@@ -41,9 +42,8 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-border/40 backdrop-blur-xl bg-background/70">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         <a href="#home" className="flex items-center gap-2 shrink-0">
-          <div className="h-9 w-9 rounded-full bg-gradient-gold grid place-items-center text-primary-foreground font-display text-lg shadow-gold">
-            {config.brand.logoEmoji}
-          </div>
+          <img src={logoAsset.url} alt={`${config.brand.name} logo`} className="h-10 w-10 rounded-full ring-2 ring-primary/60 shadow-gold" />
+
           <div className="leading-none">
             <div className="font-display text-xl tracking-wider">{config.brand.name}</div>
             <div className="text-[10px] text-muted-foreground uppercase tracking-[0.2em]">{config.brand.tagline}</div>
@@ -103,12 +103,10 @@ function Hero() {
 function BotCard() {
   return (
     <div className="relative h-[420px] sm:h-[500px]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_50%,oklch(0.82_0.12_85/0.25),transparent_60%)]" />
-      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[110%] max-w-[560px] rotate-[-8deg] glass rounded-3xl p-5 shadow-card">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_60%_50%,oklch(0.65_0.28_300/0.35),transparent_60%)]" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[110%] max-w-[560px] rotate-[-6deg] glass rounded-3xl p-5 shadow-card">
         <div className="flex items-center gap-3 mb-4">
-          <div className="h-12 w-12 rounded-full bg-gradient-gold grid place-items-center text-primary-foreground font-display text-xl">
-            {config.brand.logoEmoji}
-          </div>
+          <img src={logoAsset.url} alt="EVa" className="h-12 w-12 rounded-full ring-2 ring-primary/60" />
           <div>
             <div className="font-display text-2xl tracking-wide">PLAYING NOW</div>
             <div className="text-xs text-muted-foreground italic">Imagine Dragons x J.I.D — Enemy</div>
@@ -279,7 +277,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2 mb-4">
-            <div className="h-9 w-9 rounded-full bg-gradient-gold grid place-items-center text-primary-foreground font-display">{config.brand.logoEmoji}</div>
+            <img src={logoAsset.url} alt={config.brand.name} className="h-9 w-9 rounded-full ring-2 ring-primary/50" />
             <div className="font-display text-xl tracking-wider">{config.brand.name}</div>
           </div>
           <p className="text-sm text-muted-foreground">{config.footer.description}</p>
