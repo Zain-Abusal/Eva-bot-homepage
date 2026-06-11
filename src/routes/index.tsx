@@ -277,7 +277,7 @@ function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 grid md:grid-cols-4 gap-10">
         <div className="md:col-span-1">
           <div className="flex items-center gap-2 mb-4">
-            <div className="h-9 w-9 rounded-full bg-gradient-gold grid place-items-center text-primary-foreground font-display">{config.brand.logoEmoji}</div>
+            <img src={logoAsset.url} alt={config.brand.name} className="h-9 w-9 rounded-full ring-2 ring-primary/50" />
             <div className="font-display text-xl tracking-wider">{config.brand.name}</div>
           </div>
           <p className="text-sm text-muted-foreground">{config.footer.description}</p>
