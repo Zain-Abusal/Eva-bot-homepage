@@ -7,7 +7,6 @@
   "nav": [
     { "label": "Home", "href": "#home" },
     { "label": "Invite", "href": "#invite" },
-    { "label": "Premium", "href": "#premium" },
     { "label": "Commands", "href": "#commands" },
     { "label": "Support", "href": "#support" }
   ],
@@ -35,36 +34,6 @@
       { "icon": "Gift", "title": "Giveaways", "description": "Run giveaways with requirements, bonus entries and instant rerolls." },
       { "icon": "Bot", "title": "AI Chat", "description": "Built-in AI assistant for your members with custom personalities." },
       { "icon": "Settings2", "title": "Full Dashboard", "description": "Configure every module from a sleek web dashboard, no commands required." }
-    ]
-  },
-  "premium": {
-    "heading": "GO PREMIUM",
-    "subheading": "Unlock the full potential with premium perks.",
-    "plans": [
-      {
-        "name": "Free",
-        "price": "$0",
-        "period": "/forever",
-        "highlighted": false,
-        "features": ["All core commands", "Up to 3 custom commands", "Basic moderation", "Community support"],
-        "cta": "Get Started"
-      },
-      {
-        "name": "Premium",
-        "price": "$4.99",
-        "period": "/month",
-        "highlighted": true,
-        "features": ["Everything in Free", "Unlimited custom commands", "24/7 music with filters", "Advanced auto-mod", "Priority support"],
-        "cta": "Upgrade Now"
-      },
-      {
-        "name": "Pro",
-        "price": "$9.99",
-        "period": "/month",
-        "highlighted": false,
-        "features": ["Everything in Premium", "Up to 5 servers", "Custom branding", "API access", "Dedicated support"],
-        "cta": "Go Pro"
-      }
     ]
   },
   "commands": {
@@ -99,16 +68,16 @@
   },
   "cta": {
     "heading": "READY TO LEVEL UP YOUR SERVER?",
-    "description": "Join over a million communities using NOVA every day.",
+    "description": "Join over a million communities using EVa every day.",
     "button": { "label": "Add To Discord", "href": "#invite" }
   },
   "footer": {
     "description": "The all-in-one Discord bot built for modern communities.",
     "columns": [
-      { "title": "Product", "links": [{ "label": "Features", "href": "#features" }, { "label": "Premium", "href": "#premium" }, { "label": "Commands", "href": "#commands" }] },
+      { "title": "Product", "links": [{ "label": "Features", "href": "#features" }, { "label": "Commands", "href": "#commands" }] },
       { "title": "Company", "links": [{ "label": "About", "href": "#" }, { "label": "Blog", "href": "#" }, { "label": "Status", "href": "#" }] },
       { "title": "Legal", "links": [{ "label": "Terms", "href": "#" }, { "label": "Privacy", "href": "#" }, { "label": "Cookies", "href": "#" }] }
     ],
-    "copyright": "© 2026 NOVA Bot. All rights reserved."
+    "copyright": "© 2026 EVa Bot. All rights reserved."
   }
 }

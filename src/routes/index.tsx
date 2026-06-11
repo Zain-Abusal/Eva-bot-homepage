@@ -3,7 +3,7 @@ import config from "@/config.json";
 import logoAsset from "@/assets/eva-logo.png.asset.json";
 import {
   Music, Shield, Coins, TrendingUp, Ticket, Gift, Bot, Settings2,
-  Gem, Globe, Check, ArrowRight, Sparkles, Play, SkipForward, SkipBack, Volume2,
+  Globe, ArrowRight, Sparkles, Play, SkipForward, SkipBack, Volume2,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -30,7 +30,6 @@ function Index() {
       <Stats />
       <Features />
       <Commands />
-      <Premium />
       <CtaBanner />
       <Footer />
     </div>
@@ -53,7 +52,6 @@ function Header() {
           {config.nav.map((n, i) => (
             <a key={n.label} href={n.href} className={i === 0 ? "text-gold" : "text-foreground/80 hover:text-gold transition-colors"}>
               {n.label}
-              {n.label.toLowerCase() === "premium" && <Gem className="inline ml-1 h-3.5 w-3.5 text-gold" />}
             </a>
           ))}
         </nav>
@@ -212,45 +210,6 @@ function Commands() {
   );
 }
 
-function Premium() {
-  return (
-    <section id="premium" className="py-24">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <h2 className="font-display text-4xl sm:text-5xl">{config.premium.heading}</h2>
-          <p className="mt-4 text-muted-foreground">{config.premium.subheading}</p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-          {config.premium.plans.map((p) => (
-            <div key={p.name} className={`relative rounded-3xl p-8 ${p.highlighted ? "bg-gradient-gold text-primary-foreground shadow-gold scale-105" : "glass"}`}>
-              {p.highlighted && (
-                <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-background text-gold border border-gold/40 text-xs px-3 py-1 rounded-full uppercase tracking-wider font-bold">
-                  Most Popular
-                </div>
-              )}
-              <div className="font-display text-2xl tracking-wide">{p.name}</div>
-              <div className="mt-4 flex items-baseline gap-1">
-                <span className="font-display text-5xl">{p.price}</span>
-                <span className={`text-sm ${p.highlighted ? "text-primary-foreground/70" : "text-muted-foreground"}`}>{p.period}</span>
-              </div>
-              <ul className="mt-8 space-y-3">
-                {p.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2 text-sm">
-                    <Check className={`h-4 w-4 mt-0.5 shrink-0 ${p.highlighted ? "text-primary-foreground" : "text-gold"}`} />
-                    {f}
-                  </li>
-                ))}
-              </ul>
-              <button className={`mt-8 w-full rounded-full py-3 text-sm font-bold tracking-wider uppercase transition-transform hover:scale-[1.02] ${p.highlighted ? "bg-background text-gold" : "bg-gradient-gold text-primary-foreground shadow-gold"}`}>
-                {p.cta}
-              </button>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  );
-}
 
 function CtaBanner() {
   return (
