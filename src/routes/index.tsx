@@ -237,6 +237,10 @@ function Commands() {
 
 
 function CtaBanner() {
+  return _CtaBanner();
+}
+
+function _CtaBanner() {
   return (
     <section id="cta" className="py-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
