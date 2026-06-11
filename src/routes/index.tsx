@@ -255,6 +255,33 @@ function CtaBanner() {
   );
 }
 
+function FAQ() {
+  return (
+    <section id="faq" className="py-24">
+      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-14">
+          <h2 className="font-display text-4xl sm:text-5xl">{config.faq.heading}</h2>
+          <p className="mt-4 text-muted-foreground">{config.faq.subheading}</p>
+        </div>
+        <div className="space-y-3">
+          {config.faq.items.map((item, i) => (
+            <details
+              key={i}
+              className="group rounded-2xl glass p-5 open:bg-card/50 transition-colors"
+            >
+              <summary className="flex items-center justify-between cursor-pointer list-none gap-4">
+                <span className="font-display text-lg tracking-wide">{item.q}</span>
+                <span className="h-8 w-8 shrink-0 rounded-full border border-gold/40 grid place-items-center text-gold text-lg transition-transform group-open:rotate-45">+</span>
+              </summary>
+              <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function Footer() {
   return (
     <footer id="support" className="border-t border-border/40 py-16 bg-card/30">
