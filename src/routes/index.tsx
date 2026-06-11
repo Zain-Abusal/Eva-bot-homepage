@@ -3,12 +3,39 @@ import config from "@/config.json";
 import logoAsset from "@/assets/eva-logo.png.asset.json";
 import {
   Music, Shield, Coins, TrendingUp, Ticket, Gift, Bot, Settings2,
-  Globe, ArrowRight, Sparkles, Play, SkipForward, SkipBack, Volume2,
+  ArrowRight, Sparkles, Play, SkipForward, SkipBack, Volume2, Plus,
 } from "lucide-react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Music, Shield, Coins, TrendingUp, Ticket, Gift, Bot, Settings2,
 };
+
+function resolveHref(href: string): string {
+  if (!href) return "#";
+  if (href.startsWith("@")) {
+    const key = href.slice(1) as keyof typeof config.links;
+    return (config.links as Record<string, string>)[key] ?? "#";
+  }
+  return href;
+}
+
+function isExternal(href: string): boolean {
+  return /^https?:\/\//i.test(href);
+}
+
+function SmartLink({ href, className, children }: { href: string; className?: string; children: React.ReactNode }) {
+  const resolved = resolveHref(href);
+  const ext = isExternal(resolved);
+  return (
+    <a
+      href={resolved}
+      className={className}
+      {...(ext ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+    >
+      {children}
+    </a>
+  );
+}
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,6 +57,7 @@ function Index() {
       <Stats />
       <Features />
       <Commands />
+      <FAQ />
       <CtaBanner />
       <Footer />
     </div>
@@ -50,18 +78,15 @@ function Header() {
         </a>
         <nav className="hidden md:flex items-center gap-8 text-sm font-semibold tracking-wider uppercase">
           {config.nav.map((n, i) => (
-            <a key={n.label} href={n.href} className={i === 0 ? "text-gold" : "text-foreground/80 hover:text-gold transition-colors"}>
+            <SmartLink key={n.label} href={n.href} className={i === 0 ? "text-gold" : "text-foreground/80 hover:text-gold transition-colors"}>
               {n.label}
-            </a>
+            </SmartLink>
           ))}
         </nav>
         <div className="flex items-center gap-3 shrink-0">
-          <button className="hidden sm:flex items-center gap-1 text-sm text-foreground/80 hover:text-gold transition-colors">
-            EN <Globe className="h-4 w-4" />
-          </button>
-          <a href="#invite" className="rounded-full bg-gradient-gold px-5 py-2 text-sm font-bold tracking-wider text-primary-foreground shadow-gold hover:scale-105 transition-transform">
-            LOGIN
-          </a>
+          <SmartLink href="@invite" className="inline-flex items-center gap-1.5 rounded-full bg-gradient-gold px-5 py-2 text-sm font-bold tracking-wider text-primary-foreground shadow-gold hover:scale-105 transition-transform">
+            <Plus className="h-4 w-4" /> ADD BOT
+          </SmartLink>
         </div>
       </div>
     </header>
@@ -83,12 +108,12 @@ function Hero() {
             {config.hero.description}
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
-            <a href={config.hero.primaryCta.href} className="rounded-full bg-gradient-gold px-7 py-3.5 text-sm font-bold tracking-wider text-primary-foreground shadow-gold hover:scale-105 transition-transform inline-flex items-center gap-2">
+            <SmartLink href={config.hero.primaryCta.href} className="rounded-full bg-gradient-gold px-7 py-3.5 text-sm font-bold tracking-wider text-primary-foreground shadow-gold hover:scale-105 transition-transform inline-flex items-center gap-2">
               {config.hero.primaryCta.label} <ArrowRight className="h-4 w-4" />
-            </a>
-            <a href={config.hero.secondaryCta.href} className="rounded-full border border-gold/40 px-7 py-3.5 text-sm font-bold tracking-wider text-gold hover:bg-gold/10 transition-colors">
+            </SmartLink>
+            <SmartLink href={config.hero.secondaryCta.href} className="rounded-full border border-gold/40 px-7 py-3.5 text-sm font-bold tracking-wider text-gold hover:bg-gold/10 transition-colors">
               {config.hero.secondaryCta.label}
-            </a>
+            </SmartLink>
           </div>
         </div>
 
@@ -213,16 +238,16 @@ function Commands() {
 
 function CtaBanner() {
   return (
-    <section id="invite" className="py-20">
+    <section id="cta" className="py-20">
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden glass p-12 text-center">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,oklch(0.82_0.12_85/0.15),transparent_70%)]" />
           <div className="relative">
             <h2 className="font-display text-3xl sm:text-5xl">{config.cta.heading}</h2>
             <p className="mt-4 text-muted-foreground max-w-xl mx-auto">{config.cta.description}</p>
-            <a href={config.cta.button.href} className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-4 text-sm font-bold tracking-wider text-primary-foreground shadow-gold hover:scale-105 transition-transform">
+            <SmartLink href={config.cta.button.href} className="mt-8 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-8 py-4 text-sm font-bold tracking-wider text-primary-foreground shadow-gold hover:scale-105 transition-transform">
               {config.cta.button.label} <ArrowRight className="h-4 w-4" />
-            </a>
+            </SmartLink>
           </div>
         </div>
       </div>
@@ -247,7 +272,7 @@ function Footer() {
             <ul className="space-y-2">
               {col.links.map((l) => (
                 <li key={l.label}>
-                  <a href={l.href} className="text-sm text-muted-foreground hover:text-gold transition-colors">{l.label}</a>
+                  <SmartLink href={l.href} className="text-sm text-muted-foreground hover:text-gold transition-colors">{l.label}</SmartLink>
                 </li>
               ))}
             </ul>
