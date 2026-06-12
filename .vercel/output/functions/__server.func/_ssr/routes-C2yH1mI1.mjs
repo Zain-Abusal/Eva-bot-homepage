@@ -2,7 +2,7 @@ import { r as __toESM } from "../_runtime.mjs";
 import { n as config_default, t as LOGO } from "./routes-kNpjMX97.mjs";
 import { n as require_jsx_runtime, r as require_react } from "../_libs/react+tanstack__react-query.mjs";
 import { a as Shield, c as Music, d as Coins, f as Bot, i as Sparkles, l as Menu, n as TrendingUp, o as Settings2, p as ArrowUpRight, r as Ticket, s as Plus, t as X, u as Gift } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-BoPO-bMo.js
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-C2yH1mI1.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var iconMap = {
@@ -319,174 +319,47 @@ function Commands() {
 			heading: config_default.commands.heading,
 			sub: config_default.commands.subheading
 		}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-			className: "mt-12 grid gap-8 lg:grid-cols-[1.35fr_0.85fr]",
-			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "rounded-3xl glass overflow-hidden border border-border/40",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "bg-background/15 p-6 sm:p-8",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "text-[11px] uppercase tracking-[0.25em] text-primary mb-3",
-								children: "Popular categories"
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-								className: "font-display text-3xl sm:text-4xl tracking-tight",
-								children: "Find the commands your server needs fast."
-							}),
-							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "mt-4 max-w-2xl text-sm text-muted-foreground leading-relaxed",
-								children: "Browse the most useful slash commands across music, moderation, economy and more. Tap any category to preview live command examples."
-							})
-						] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "rounded-3xl border border-border/50 bg-background/40 px-4 py-3 text-sm text-muted-foreground",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "font-semibold text-foreground",
-								children: config_default.hero.stats[2]?.value ?? "120+"
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-								className: "mt-1 tracking-[0.18em] uppercase text-[10px] text-primary",
-								children: "Commands available"
-							})]
-						})]
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "mt-8 grid gap-3 sm:grid-cols-3",
-						children: cats.map((category, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("button", {
-							onClick: () => setActive(index),
-							className: `rounded-3xl border p-4 text-left transition-all ${active === index ? "border-primary/60 bg-primary/10 shadow-gold" : "border-border/40 bg-background/30 hover:border-primary/50 hover:bg-primary/5"}`,
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex items-center justify-between gap-3",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "font-display text-sm tracking-tight",
-									children: category.name
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "rounded-full bg-primary/10 px-2.5 py-1 text-xs font-semibold text-primary",
-									children: category.items.length
-								})]
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", {
-								className: "mt-3 text-sm text-muted-foreground leading-relaxed",
-								children: [
-									category.items.slice(0, 2).map((item) => item.cmd).join(" • "),
-									" ",
-									category.items.length > 2 ? "…" : ""
-								]
-							})]
-						}, category.name))
-					})]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "border-t border-border/40 bg-background/10 p-5 sm:p-7",
-					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-						className: "grid gap-4 sm:grid-cols-2",
-						children: current.items.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "group rounded-3xl border border-border/40 bg-background/30 p-4 sm:p-5 transition-all hover:border-primary/50 hover:bg-primary/5",
-							style: { animationDelay: `${index * .04}s` },
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "flex items-center gap-2 text-sm font-semibold text-primary",
-								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "text-muted-foreground font-mono",
-									children: "/"
-								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
-									className: "font-mono",
-									children: item.cmd.replace(/^ ?\//, "").trim()
-								})]
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-								className: "mt-3 text-sm text-muted-foreground leading-relaxed",
-								children: item.desc
-							})]
-						}, item.cmd))
-					}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-						className: "mt-6 flex flex-col gap-3 border-t border-border/40 pt-5 sm:flex-row sm:items-center sm:justify-between",
-						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
-							className: "text-xs uppercase tracking-[0.24em] text-muted-foreground font-mono",
-							children: [
-								current.items.length,
-								" ",
-								current.items.length === 1 ? "command" : "commands",
-								" in ",
-								current.name.toLowerCase()
-							]
-						}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(A, {
-							href: "@docs",
-							className: "inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline",
-							children: ["View all commands ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "h-4 w-4" })]
-						})]
-					})]
-				})]
+			className: "mt-12 space-y-8",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "flex flex-wrap gap-3 justify-center",
+				children: cats.map((category, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+					onClick: () => setActive(index),
+					className: `px-6 py-3 rounded-full font-display text-sm tracking-tight transition-all ${active === index ? "bg-gradient-gold text-primary-foreground shadow-gold" : "border border-border/50 text-foreground hover:border-primary/50 hover:bg-primary/5"}`,
+					children: category.name
+				}, category.name))
 			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-				className: "space-y-4",
-				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "rounded-3xl glass p-6 sm:p-8",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "text-[11px] uppercase tracking-[0.25em] text-primary",
-							children: "Slash command ready"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-							className: "mt-4 font-display text-2xl tracking-tight",
-							children: "Everything is built for fast Discord use."
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "mt-4 text-sm leading-relaxed text-muted-foreground",
-							children: "EVa uses slash commands with autocomplete, permission-aware help and instant responses. Join your server and start managing channels, music and economy in seconds."
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-							className: "mt-6 space-y-3",
-							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "rounded-2xl border border-border/40 bg-background/40 p-4",
-								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "text-xs uppercase tracking-[0.2em] text-muted-foreground",
-										children: "Quick start"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "mt-3 font-mono text-sm text-foreground",
-										children: "/play > song name"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "mt-1 text-sm text-muted-foreground",
-										children: "Play music instantly from YouTube, Spotify, or SoundCloud."
-									})
-								]
-							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-								className: "rounded-2xl border border-border/40 bg-background/40 p-4",
-								children: [
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "text-xs uppercase tracking-[0.2em] text-muted-foreground",
-										children: "Power user"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "mt-3 font-mono text-sm text-foreground",
-										children: "/ban <member> <reason>"
-									}),
-									/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-										className: "mt-1 text-sm text-muted-foreground",
-										children: "Moderate safely with audit logs and role checks built in."
-									})
-								]
+				className: "rounded-3xl glass p-8 sm:p-10 border border-border/40",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "grid gap-4 sm:grid-cols-2 lg:grid-cols-3",
+					children: current.items.map((item, index) => /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+						className: "group rounded-2xl border border-border/50 bg-background/30 p-6 transition-all hover:border-primary/50 hover:bg-primary/5 hover:shadow-lg",
+						style: { animationDelay: `${index * .05}s` },
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+							className: "flex items-baseline gap-3",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+								className: "text-primary/60 font-mono text-lg",
+								children: "/"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("code", {
+								className: "text-primary font-mono font-semibold text-base",
+								children: item.cmd.replace(/^ ?\//, "").trim()
 							})]
-						})
-					]
-				}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
-					className: "rounded-3xl glass p-6 sm:p-8",
-					children: [
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
-							className: "text-[11px] uppercase tracking-[0.25em] text-primary",
-							children: "Need help?"
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h3", {
-							className: "mt-4 font-display text-2xl tracking-tight",
-							children: "Full command support is just one click away."
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
-							className: "mt-4 text-sm leading-relaxed text-muted-foreground",
-							children: "Access docs, browse full syntax, and see permission requirements from the support server or command reference page."
-						}),
-						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(A, {
-							href: "@support",
-							className: "mt-6 inline-flex items-center gap-2 rounded-full bg-gradient-gold px-5 py-3 text-sm font-semibold text-primary-foreground shadow-gold hover:scale-105 transition-transform",
-							children: ["Visit support server ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "h-4 w-4" })]
-						})
-					]
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-4 text-sm text-muted-foreground leading-relaxed",
+							children: item.desc
+						})]
+					}, item.cmd))
+				}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-8 pt-6 border-t border-border/40 flex items-center justify-center",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+						className: "text-xs uppercase tracking-[0.22em] text-muted-foreground font-mono",
+						children: [
+							current.items.length,
+							" ",
+							current.items.length === 1 ? "command" : "commands",
+							" • ",
+							current.name
+						]
+					})
 				})]
 			})]
 		})]
