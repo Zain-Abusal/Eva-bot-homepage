@@ -2,7 +2,8 @@
   "brand": {
     "name": "EVa",
     "tagline": "Discord Bot",
-    "logoEmoji": "✦"
+    "logoEmoji": "✦",
+    "logoUrl": "/eva-logo.png"
   },
   "theme": {
     "fontDisplay": "Space Grotesk",
